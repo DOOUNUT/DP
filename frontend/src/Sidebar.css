@@ -1,0 +1,25 @@
+.sidebar {
+    width: 200px;
+    background-color: #2f3136; /* 사이드바 배경색 */
+    padding: 20px;
+    border-right: 1px solid #40444b; /* 경계선 */
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 5px 0;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.sidebar li:hover {
+    color: #7289da; /* 호버 효과 */
+}
