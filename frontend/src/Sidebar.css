@@ -1,25 +1,50 @@
 .sidebar {
-    width: 200px;
-    background-color: #2f3136; /* 사이드바 배경색 */
-    padding: 20px;
-    border-right: 1px solid #40444b; /* 경계선 */
+    width: 250px;
+    background-color: #2f3136; /* 디스코드의 사이드바 배경색 */
+    color: #ffffff;
+    padding: 15px;
+    border-right: 1px solid #202225; /* 사이드바 경계 */
 }
 
-.sidebar h2 {
+.profile-section {
+    margin-bottom: 20px;
+}
+
+.profile-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.settings-button {
+    padding: 5px 10px;
+    background-color: #7289da;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.settings-button:hover {
+    background-color: #5b6e9a; /* 버튼 호버 색상 */
+}
+
+.server-list h2 {
+    font-size: 1.5em;
     margin-bottom: 10px;
 }
 
-.sidebar ul {
-    list-style: none;
+.server-list ul {
+    list-style-type: none;
     padding: 0;
 }
 
-.sidebar li {
-    margin: 5px 0;
+.server-list li {
+    padding: 5px;
+    transition: background-color 0.3s;
     cursor: pointer;
-    color: #ffffff;
 }
 
-.sidebar li:hover {
-    color: #7289da; /* 호버 효과 */
+.server-list li:hover {
+    background-color: #3b4045; /* 리스트 항목 호버 색상 */
 }

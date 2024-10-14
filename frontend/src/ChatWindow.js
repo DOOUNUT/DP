@@ -1,26 +1,27 @@
 import React from 'react';
-import './ChatWindow.css';
 
 function ChatWindow({ messages, newMessage, setNewMessage, sendMessage }) {
     return (
         <div className="chat-window">
-            <h1>메시지 목록</h1>
-            <ul className="message-list">
-                {messages.map((msg, index) => (
-                    <li key={index} className="message-item">
-                        {msg.content}
-                    </li>
+            <div className="messages">
+                {messages.map((message, index) => (
+                    <div
+                        key={index}
+                        className={`message ${message.senderType === 'self' ? 'self-message' : 'other-message'}`}
+                    >
+                        <span className="sender">{message.sender}:</span>
+                        <span className="content">{message.content}</span>
+                    </div>
                 ))}
-            </ul>
+            </div>
             <div className="input-area">
                 <input
                     type="text"
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
-                    placeholder="메시지를 입력하세요"
-                    className="message-input"
+                    placeholder="Type a message..."
                 />
-                <button onClick={sendMessage} className="send-button">전송</button>
+                <button onClick={sendMessage}>Send</button>
             </div>
         </div>
     );

@@ -1,46 +1,51 @@
 .chat-window {
-    flex: 1;
-    padding: 20px;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
-.message-list {
-    list-style: none;
-    padding: 0;
-    max-height: 300px;
+.messages {
+    flex-grow: 1;
     overflow-y: auto;
-    margin-bottom: 20px;
+    padding: 10px;
 }
 
-.message-item {
-    background-color: #2f3136; /* 메시지 배경색 */
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 4px;
+.message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.self-message {
+    align-items: flex-end;
+    color: #4a90e2;
+}
+
+.other-message {
+    align-items: flex-start;
+    color: #333;
+}
+
+.sender {
+    font-weight: bold;
+}
+
+.content {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.self-message .content {
+    background-color: #daf1ff;
+}
+
+.other-message .content {
+    background-color: #f1f1f1;
 }
 
 .input-area {
     display: flex;
-}
-
-.message-input {
-    flex: 1;
     padding: 10px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 10px;
-}
-
-.send-button {
-    padding: 10px 15px;
-    background-color: #7289da; /* 버튼 배경색 */
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.send-button:hover {
-    background-color: #5b6eae; /* 버튼 호버 색상 */
+    border-top: 1px solid #ddd;
 }
