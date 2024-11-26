@@ -1,0 +1,55 @@
+.login-container {
+    width: 350px;
+    background-color: #2f3136; /* 디스코드 사이드바 배경 색상 */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+}
+
+.login-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #202225;
+    color: #ffffff;
+    border: 1px solid #444748;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input:focus {
+    background-color: #33363b;
+    border-color: #7289da; /* 포커스 시 보더 색상 */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #7289da; /* 버튼 색상 */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5b6e9a; /* 버튼 호버 색상 */
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1em;
+    color: #888;
+}
