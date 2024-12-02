@@ -2,23 +2,22 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css';
 
-function Login({ onLoginSuccess }) { // 부모 컴포넌트에서 콜백을 받습니다.
+function Login({ onLoginSuccess }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
 
     const handleLogin = async () => {
         try {
-            // POST 방식으로 로그인 데이터 보내기
             const response = await axios.post('http://localhost:8080/api/auth/login', {
                 username,
                 password,
             });
 
-            // 서버 응답에 따른 처리
-            if (response.data.success) {
+            // 서버 응답 처리
+            if (response.data.message === '로그인 성공') {
                 setMessage('로그인 성공');
-                onLoginSuccess(username); // 로그인 성공 시 부모에게 알립니다.
+                onLoginSuccess(response.data.username); // 성공적으로 로그인한 경우 부모 컴포넌트에 사용자 이름 전달
             } else {
                 setMessage('로그인 실패: 사용자 정보 오류');
             }
@@ -29,7 +28,6 @@ function Login({ onLoginSuccess }) { // 부모 컴포넌트에서 콜백을 받�
 
     return (
         <div className="login-container">
-            <h2>로그인</h2>
             <input
                 type="text"
                 placeholder="아이디"

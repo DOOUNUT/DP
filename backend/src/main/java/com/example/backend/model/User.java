@@ -3,6 +3,8 @@ package com.example.backend.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+import com.example.backend.entity.*;
+
 @Entity
 public class User {
 
@@ -19,6 +21,13 @@ public class User {
         this.id = id;
         this.username = username;
         this.password = password;
+    }
+
+    // UserEntity 객체를 받아서 User 객체로 변환하는 생성자
+    public User(UserEntity userEntity) {
+        this.id = userEntity.getId();
+        this.username = userEntity.getUsername();
+        this.password = userEntity.getPassword();
     }
 
     // getter와 setter 추가

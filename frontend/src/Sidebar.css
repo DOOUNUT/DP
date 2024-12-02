@@ -1,51 +1,35 @@
 .sidebar {
     width: 250px;
-    background-color: #2f3136; /* 디스코드의 사이드바 배경색 */
-    color: #ffffff;
-    padding: 15px;
-    border-right: 1px solid #202225; /* 사이드바 경계 */
+    padding: 20px;
+    border-right: 2px solid #ccc;
 }
 
 .profile-section {
     margin-bottom: 20px;
 }
 
-.profile-section h2 {
-    font-size: 1.5em;
-    
-    margin-bottom: 5px;
+.course-list {
+    margin-top: 20px;
 }
 
-.settings-button {
-    padding: 5px 10px;
-    background-color: #7289da;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.add-course {
+    margin-top: 20px;
 }
 
-.settings-button:hover {
-    background-color: #5b6e9a; /* 버튼 호버 색상 */
-}
-
-.server-list h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.server-list ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.server-list li {
+.add-course input {
+    width: 150px;
     padding: 5px;
-    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.add-course-button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
     cursor: pointer;
 }
 
-.server-list li:hover {
-    background-color: #3b4045; /* 리스트 항목 호버 색상 */
+.add-course-button:hover {
+    background-color: #45a049;
 }

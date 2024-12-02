@@ -1,92 +1,37 @@
 .app {
   display: flex;
-  height: 100vh;
-  background-color: #36393f; /* 배경 색상 */
-  color: #ffffff; /* 텍스트 색상 */
-  font-family: Arial, sans-serif; /* 기본 폰트 */
 }
 
 .main-content {
   flex: 1;
   padding: 20px;
-  overflow-y: auto; /* 세로 스크롤 가능 */
-  max-width: 800px; /* 최대 너비 설정 */
-  margin: auto; /* 중앙 정렬 */
 }
 
-.app-title {
-  font-size: 2em; /* 제목 크기 증가 */
-  margin-bottom: 20px;
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-.notification {
-  background-color: #4caf50; /* 알림 배경 색상 */
-  color: #ffffff; /* 알림 텍스트 색상 */
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  text-align: center;
+.course-list {
+  margin-top: 20px;
 }
 
-.message-list {
+.course-list ul {
   list-style-type: none;
   padding: 0;
-  max-width: 600px;
-  margin-bottom: 20px;
 }
 
-.message-item {
-  background-color: #42464d; /* 메시지 배경 색상 */
+.course-list li {
+  padding: 10px;
+  background-color: #2f3136;
+  color: white;
   margin: 5px 0;
-  padding: 10px;
   border-radius: 5px;
-}
-
-.input-area {
-  display: flex;
-  max-width: 600px;
-}
-
-.message-input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  background-color: #2f3136; /* 입력창 배경 색상 */
-  color: white; /* 입력 텍스트 색상 */
-}
-
-.send-button, .share-button {
-  padding: 10px;
-  color: white; /* 버튼 텍스트 색상 */
   cursor: pointer;
-  border: none;
-  transition: background-color 0.3s; /* 배경 색상 변화 추가 */
 }
 
-.send-button {
-  background-color: #7289da; /* 전송 버튼 색상 */
-}
-
-.send-button:hover {
-  background-color: #5b6e9a; /* 전송 버튼 마우스 오버 색상 */
-}
-
-.share-button {
-  background-color: #ffcc00; /* 화면 공유 버튼 색상 */
-  margin-left: 10px; /* 버튼 간격 추가 */
-}
-
-.share-button:hover {
-  background-color: #e6b800; /* 화면 공유 버튼 마우스 오버 색상 */
-}
-
-.video-container {
-  margin-top: 20px;
-  position: relative;
-}
-
-video {
-  width: 100%; /* 비디오 넓이 100% */
-  border: 1px solid #ccc; /* 비디오 테두리 추가 */
-  border-radius: 5px; /* 비디오 모서리 둥글게 */
+.course-list li:hover {
+  background-color: #3a3f47;
 }

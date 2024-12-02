@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.exception.UsernameNotFoundException;
 import com.example.backend.model.User;
 import com.example.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,10 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    // 로그인 요청을 받는 DTO 클래스
     public static class LoginRequest {
         private String username;
         private String password;
 
-        // Getter and Setter
         public String getUsername() {
             return username;
         }
@@ -40,26 +39,27 @@ public class AuthController {
         }
     }
 
-    // 로그인 처리
     @PostMapping("/login")
     public ResponseEntity<Map<String, String>> login(@RequestBody LoginRequest loginRequest) {
+        System.out.println("입력된 username: " + loginRequest.getUsername());
         User user = userService.findByUsername(loginRequest.getUsername());
-
         Map<String, String> response = new HashMap<>();
-
-        if (user == null) {
-            response.put("message", "로그인 실패: 사용자 정보 없음");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);  // 사용자 없으면 404 반환
-        }
-
-        // 비밀번호를 단순 비교 (암호화 없이)
+    
         if (loginRequest.getPassword().equals(user.getPassword())) {
             response.put("message", "로그인 성공");
-            response.put("username", user.getUsername());  // 로그인한 사용자 이름 추가
+            response.put("username", user.getUsername());
             return ResponseEntity.ok(response);
         } else {
             response.put("message", "로그인 실패: 비밀번호 오류");
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);  // 비밀번호 오류시 401 반환
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
         }
+    }
+
+    // UsernameNotFoundException 처리
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public ResponseEntity<Map<String, String>> handleUsernameNotFoundException(UsernameNotFoundException ex) {
+        Map<String, String> response = new HashMap<>();
+        response.put("message", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
 }
