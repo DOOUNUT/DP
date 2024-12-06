@@ -12,6 +12,7 @@
     font-size: 1.8em;
     margin-bottom: 15px;
     text-align: center;
+    color: #ffffff;
 }
 
 input {
@@ -52,4 +53,9 @@ p {
     margin-top: 10px;
     font-size: 1em;
     color: #888;
+}
+
+button:disabled {
+    background-color: #5b6e9a; /* 비활성화된 버튼 색상 */
+    cursor: not-allowed;
 }

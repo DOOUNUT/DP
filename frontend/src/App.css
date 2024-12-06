@@ -1,19 +1,30 @@
+/* 앱 전체 화면을 구성 */
 .app {
   display: flex;
+  height: 100vh; /* 전체 화면을 채우도록 설정 */
+  flex-direction: column; /* 세로로 나열 */
 }
 
+/* 메인 콘텐츠 영역 */
 .main-content {
   flex: 1;
   padding: 20px;
+  overflow-y: auto; /* 내용이 많을 경우 스크롤 가능하게 설정 */
+  background-color: #f4f4f9; /* 부드러운 배경 색상 추가 */
 }
 
+/* 로그인 페이지 스타일 */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  background-color: #ffffff; /* 로그인 페이지 배경 색상 */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* 로그인 영역에 부드러운 그림자 추가 */
+  border-radius: 10px; /* 로그인 컨테이너의 둥근 모서리 */
 }
 
+/* 과목 목록 */
 .course-list {
   margin-top: 20px;
 }
@@ -24,14 +35,41 @@
 }
 
 .course-list li {
-  padding: 10px;
+  padding: 12px;
   background-color: #2f3136;
   color: white;
   margin: 5px 0;
-  border-radius: 5px;
+  border-radius: 8px; /* 둥근 테두리 */
   cursor: pointer;
+  transition: background-color 0.3s ease; /* 부드러운 색상 변화 */
 }
 
 .course-list li:hover {
-  background-color: #3a3f47;
+  background-color: #3a3f47; /* 호버 시 배경 색상 변경 */
+}
+
+/* 선택한 과목 게시판 */
+.course-board {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff; /* 배경색 */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+}
+
+.course-board h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #333; /* 제목 색상 */
+}
+
+/* 추가적인 스타일링 */
+button {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 로그인 페이지 배경에 약간의 그라디언트 추가 */
+.login-container {
+  background: linear-gradient(135deg, #2f3136, #1e2024); /* 그라디언트 배경 추가 */
 }

@@ -2,14 +2,52 @@
     width: 250px;
     padding: 20px;
     border-right: 2px solid #ccc;
+    background-color: #2f3136; /* 사이드바 배경 색상 */
+    color: white; /* 텍스트 색상 */
+    height: 100vh; /* 사이드바가 화면 전체 높이를 차지하도록 설정 */
+    position: fixed; /* 사이드바 고정 */
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
 }
 
 .profile-section {
     margin-bottom: 20px;
 }
 
+.profile-section h2 {
+    color: #fff; /* 프로필 제목 색상 */
+}
+
+.profile-section p {
+    color: #ddd; /* 프로필 내용 색상 */
+}
+
 .course-list {
     margin-top: 20px;
+}
+
+.course-list h2 {
+    color: #fff; /* 과목 목록 제목 색상 */
+}
+
+.course-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course-list li {
+    padding: 10px;
+    background-color: #3a3f47; /* 기본 과목 목록 항목 배경 색상 */
+    color: white;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 부드러운 색상 변화 */
+}
+
+.course-list li:hover {
+    background-color: #4a535c; /* 호버 시 색상 변화 */
 }
 
 .add-course {
@@ -17,9 +55,13 @@
 }
 
 .add-course input {
-    width: 150px;
+    width: 160px;
     padding: 5px;
     margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
 .add-course-button {
@@ -27,7 +69,9 @@
     background-color: #4CAF50;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .add-course-button:hover {

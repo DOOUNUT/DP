@@ -16,12 +16,13 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String subjectName;
-    private String professor;
+    private String subjectName;  // subject_name 필드에 매핑
+    private String professor;    // professor 필드에 매핑
+    private String description;  // description 필드에 매핑
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private User user;  // user_id와 연결
 
     // Getters and setters
     public Long getId() {
@@ -46,6 +47,14 @@ public class Subject {
 
     public void setProfessor(String professor) {
         this.professor = professor;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public User getUser() {

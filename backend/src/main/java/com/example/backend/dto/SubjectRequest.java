@@ -2,8 +2,9 @@ package com.example.backend.dto;
 
 public class SubjectRequest {
 
-    private String subjectName;
-    private String professor;
+    private String subjectName;  // subject_name 필드에 매핑
+    private String professor;    // professor 필드에 매핑
+    private String description;  // description 필드에 매핑
 
     // Getters and setters
     public String getSubjectName() {
@@ -20,5 +21,13 @@ public class SubjectRequest {
 
     public void setProfessor(String professor) {
         this.professor = professor;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
